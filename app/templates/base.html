@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <meta charset = 'UTF-8'>
+        {% if nickname %}
+        <title>{{ nickname }} - microblog</title>
+        {% else %}
+        <title>Welcome to microblog</title>
+        {% endif %}
+    </head>
+    <body>
+        {% block content %}{% endblock %}
+        {% for message in get_flashed_messages() %}
+        <div> {{ message }}</div>
+        {% endfor %}
+    </body>
+</html>

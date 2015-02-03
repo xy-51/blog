@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+<a href='/logout'>logout</a>
+<a href='/add'>add</a>
+<h1>{{ nickname }} welcome!</h1>
+
+{% if articles %}
+<h3>Here are your blog-articles.</h3>
+    {% for title in articles %}
+    <a href='/article'>{{ title[0] }}</a><br/>
+    {% endfor %}
+{% else %}
+<h3>You have no blog-article.</h3>
+{% endif %}
+{% endblock %}
